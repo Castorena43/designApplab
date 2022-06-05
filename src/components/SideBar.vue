@@ -1,10 +1,10 @@
 <template>
   <aside class="d-flex flex-column justify-content-between sidebar">
-    <div class="d-flex align-items-start justify-content-end close-nav">
+    <!-- <div class="d-flex align-items-start justify-content-end close-nav">
       <button class="close" @click="close">
         <i class="fa-solid fa-xmark" style="font-size: 20px;"></i>
       </button>
-    </div>
+    </div> -->
     <div>
       <div class="sidebar-logo">
         <img src="@/assets/logo.png" alt="logo" class="logo">
@@ -113,12 +113,12 @@ export default {
   padding: 2px 2px 0 0;
 }
 
-@media only screen and (min-width: 1200px) {
-  .close-nav {
-    display: none !important;
-  }
-  .sidebar {
-    display: none !important;
-  }
-}
+// @media only screen and (min-width: 1200px) {
+//   .close-nav {
+//     display: none !important;
+//   }
+//   .sidebar {
+//     display: none !important;
+//   }
+// }
 </style>
