@@ -1,27 +1,21 @@
 <template>
   <div class="d-flex flex-column main">
-    <BreadCrumb title="Administradores"/>
+    <BreadCrumb title="Perfil de administrador"/>
     <div class="container">
-      <AdminList />
+      <DetailAdmin />
     </div>
   </div>
 </template>
 
 <script>
 import BreadCrumb from '@/components/BreadCrumb.vue';
-import AdminList from '@/components/admin/AdminList.vue';
+import DetailAdmin from '@/components/admin/DetailAdmin.vue';
 
 export default {
-  name: "HomeView",
+  name: "DetailView",
   components: {
     BreadCrumb,
-    AdminList
+    DetailAdmin
 }
 }
 </script>
-
-<style>
-.content {
-  width: 100%   ;
-}
-</style>
