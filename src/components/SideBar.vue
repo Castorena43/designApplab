@@ -1,11 +1,6 @@
 <template>
-  <aside class="d-flex flex-column justify-content-between sidebar">
-    <!-- <div class="d-flex align-items-start justify-content-end close-nav">
-      <button class="close" @click="close">
-        <i class="fa-solid fa-xmark" style="font-size: 20px;"></i>
-      </button>
-    </div> -->
-    <div>
+  <aside class="d-flex flex-column justify-content-between sidebar" v-if="close"> 
+    <div class="">
       <div class="sidebar-logo">
         <img src="@/assets/logo.png" alt="logo" class="logo">
       </div>
@@ -31,6 +26,12 @@
 
 <script>
 export default {
+  props: {
+    close: {
+      type: Boolean,
+      default: true
+    }
+  },
   data () {
     return {
       sections: [
@@ -83,13 +84,17 @@ export default {
 <style lang="scss" scoped>
 .sidebar {
   height: 100vh;
-  width: 20%;
+  width: 250px;
+
   background-color: #FFFF;
   border-right: 1px solid #E8EAF0;
 }
 .sidebar-logo {
   width: 100%;
   margin-top: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .logo {

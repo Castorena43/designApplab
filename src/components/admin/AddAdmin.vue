@@ -1,5 +1,5 @@
 <template>
-  <div class="d-flex flex-column ml-1" style="width: 30%;">
+  <div class="d-flex flex-column ml-1" style="width: 100%;">
     <div class="d-flex flex-column align-items-start" v-if="success">
       <i class="fa-solid fa-circle-check"></i>
       <span class="title">Cambios guardados</span>
@@ -7,9 +7,9 @@
       <button class="btn btn-add mt-3" @click="backHome">Regresar a mis administradores</button>
     </div>
     <div v-if="!success">
-      <div  class="d-flex flex-column align-items-start mb-3">
+      <div  class="d-flex flex-column align-items-start mb-3 file">
         <span class="file-label">Sube tu fotografía con un peso menor a 2MB</span>
-        <input type="file" style="display:none">
+        <input type="file-input" style="display:none">
         <div class="d-flex flex-column file align-items-center">
           <div class="file-icon">
             <i class="fa-solid fa-image"></i>
@@ -53,7 +53,7 @@
           <option>Activo</option>
         </select>
       </div>
-      <div class="d-flex flex-row mb-4">
+      <div class="d-flex flex-row mb-4 flex-wrap">
         <button class="btn btn-download mr-3" @click="backHome">Cancelar</button>
         <button class="btn btn-add" @click="addAdmin">Agregar Administrador</button>
       </div>
@@ -81,8 +81,11 @@ export default {
 }
 </script>
 
-<style scoped>
+<style scoped lang="scss">
 .file {
+  width: 200px;
+}
+.file-input {
   border: 2px solid #E8EAF0;
   width: 70%;
   border-radius: 10px;
@@ -121,5 +124,23 @@ export default {
 }
 .title {
   font-weight: 600;
+}
+.form-group > .form-control {
+  width: 25%;
+}
+@media only screen and (max-width: 600px) {
+  .form-group > .form-control {
+    width: 100% !important;
+  }
+}
+@media only screen and (max-width: 1000px) and (min-width: 600px) {
+  .form-group > .form-control {
+    width: 50% !important;
+  }
+}
+@media only screen and (max-width: 1600px) and (min-width: 1000px) {
+  .form-group > .form-control {
+    width: 40% !important;
+  }
 }
 </style>

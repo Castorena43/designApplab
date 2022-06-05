@@ -1,8 +1,8 @@
 <template>
   <div class="d-flex flex-row main">
-    <SideBar />
+    <SideBar :close="showAside" />
     <div class="d-flex flex-column content">
-      <NavBar />
+      <NavBar @close="close" />
       <router-view/>
     </div>
   </div>
@@ -17,19 +17,25 @@ export default {
     SideBar,
     NavBar
   },
-  mounted () {
-    console.log(process.env.NODE_ENV)
+  data () {
+    return {
+      showAside: true
+    }
+  },
+  methods: {
+    close (value) {
+      this.showAside = value
+    }
   }
 }
 </script>
 
 <style>
-#app {
+/* #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-}
-
+} */
 </style>

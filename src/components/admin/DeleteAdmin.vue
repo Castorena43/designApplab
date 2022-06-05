@@ -46,6 +46,11 @@ export default {
   padding: 12px 16px;
   z-index: 1;
 }
+@media only screen and (max-width: 800px) {
+  .content {
+    width: 60% !important;
+  }
+}
 .title {
   font-size: 20px;
   color: #4FB9BB;
